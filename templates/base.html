@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #63e5c5, #14366f);
+            margin: 0;
+            padding: 20px;
+            color: #343a40; /* Text color set to black */
+        }
+        header {
+            background-color: #ff5349;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #666;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+        .custom-button {
+            background-color: #ff5349;
+            border: none; /* Remove borders */
+            color: white; /* White text */
+            padding: 15px 32px; /* Padding */
+            text-align: center; /* Center text */
+            text-decoration: none; /* Remove underline */
+            display: inline-block; /* Make it inline */
+            font-size: 16px; /* Font size */
+            margin: 4px 2px; /* Margin */
+            cursor: pointer; /* Cursor on hover */
+            border-radius: 8px; /* Rounded corners */
+        }
+
+        /* Change the color on hover */
+        .custom-button:hover {
+            background-color: #45a049;
+        }
+        #home_login {
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+
+        .entry-box{
+            border: 2px solid #333; /* Add a 2px solid border */
+            border-radius: 4px; /* Add border radius */
+            padding: 20px; /* Add padding */
+            width: 300px; /* Add width */
+            text-align: center; /* Center the content */
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Restaurant API </h1>
+    </header>
+    <nav>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
+    <div class="container">
+        <div class="entry-box">
+            <h2>Login / Sign Up</h2>
+            <a href="/login">
+                <button class="custom-button">Login</button>
+            </a>
+              
+            <p>Don't have an account? <a href="/sign">Sign up</a></p>
+        </div>
+    </div>
+</body>
+</html>
