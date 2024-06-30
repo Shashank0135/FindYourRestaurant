@@ -9,6 +9,11 @@ import os
 
 app = FastAPI()
 
+# Jinja2 templates setup
+templates = Jinja2Templates(directory="templates")
+
+load_dotenv('.env')
+
 # Read the CSV file
 df = pd.read_csv("restaurants.csv", encoding='ISO-8859-1')
 
@@ -16,11 +21,6 @@ df = pd.read_csv("restaurants.csv", encoding='ISO-8859-1')
 restaurants = df.to_dict(orient='records')
 
 PER_PAGE = 10
-
-# Jinja2 templates setup
-templates = Jinja2Templates(directory="templates")
-
-load_dotenv('.env')
 
 conn = psycopg2.connect(
     dbname=os.getenv("POSTGRES_DB"),
@@ -85,10 +85,11 @@ async def home(request: Request, page: int = 1):
     
     prev_url = None
     next_url = None
+
     if start > 0:
-        prev_url = f"/?page={page - 1}"
+        prev_url = f"/home?page={page - 1}"
     if end < len(restaurants):
-        next_url = f"/?page={page + 1}"
+        next_url = f"/home?page={page + 1}"
     
     return templates.TemplateResponse(
         "home.html", 
